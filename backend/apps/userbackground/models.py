@@ -9,21 +9,22 @@ class UserBackground(models.Model):
         db_table = 'userBackground'
 
     username = models.CharField(
-         'Username',blank=False, null=True, max_length=50, db_index=True,
+         'User name',blank=False, null=True, max_length=100, db_index=True,
     )
     company_name = models.CharField(
-        'Company name', blank=False, null=True, max_length=50, db_index=True,
+        'Company name', blank=False, null=True, max_length=100, 
     )
-    company_logo = CloudinaryField(
-        'Company logo', blank=False, null=True, db_index=True,
+    company_logo = models.ImageField(
+        'Company logo', blank=False, null=True, max_length=140
     )
     role = models.CharField(
-        'Role', max_length=50, db_index=True, blank=True, null=True
+        'Role In Company', max_length=50,  blank=True, null=True
     )
-    background_id =models.ForeignKey(BackgroundImg ,db_index=True, on_delete=models.CASCADE,
+    background_id =models.ForeignKey(BackgroundImg , 
+    related_name='background_image',db_index=True, on_delete=CASCADE,
     )
     generated_background= CloudinaryField(
-        'generated background', blank=False, null=True
+        'generated background', blank=False, null=True , max_length=255
     )
     created_at = models.DateTimeField(
         'Created Datetime', blank=False, auto_now_add=True

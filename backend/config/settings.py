@@ -31,8 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'dreamline-backend-prod.herokuapp.com']
 CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000',
-                        'https://dreamline-frontend-prod.herokuapp.com']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://dreamline-frontend-prod.herokuapp.com']
 
 # Application definition
 
@@ -47,12 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.posts',
-<<<<<<< HEAD
     'apps.backgroundimage',
     'apps.userbackground',
-=======
     'apps.user',
->>>>>>> d2d2c48b932de22f6736e55ea144cf4a64e20e86
     'cloudinary',
     'django_filters',
 ]
@@ -154,6 +150,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
