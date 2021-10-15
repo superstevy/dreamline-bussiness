@@ -1,8 +1,8 @@
 from config.settings import BASE_DIR, MEDIA_URL
 import os
-from apps.user_backgrounds.serializers import UserBackgroundSerializer
-from apps.user_backgrounds.models import UserBackground
-from apps.background_images.models import BackgroundImage
+from apps.userbackground.serializers import UserBackgroundSerializer
+from apps.userbackground.models import UserBackground
+from apps.backgroundimage.models import backgroundImg
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
@@ -58,7 +58,7 @@ class UserBackgroundAdd(generics.CreateAPIView):
         serializer = UserBackgroundSerializer()
         serializer.validate(request.data)
         # Get Image Background
-        background = BackgroundImage.objects.get(id=request.data['background_id'])
+        background = BackgroundImg.objects.get(id=request.data['background_id'])
         # Define the path to our custom .ttf font
         raleway_bold, raleway_medium = load_font()
         # Get uploaded file logo
