@@ -3,6 +3,6 @@ from .views import *
 
 urlpatterns = [
     path('', UserBackgroundList.as_view(), name='user_list'),
-    path('userbackground/', UserBackgroundAdd.as_view(),
-         name='user_background_add'),
+    path('add/', UserBackgroundAdd.as_view(),
+         name='add'),
 ]
