@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 import django_heroku
 import cloudinary
 import cloudinary.uploader
@@ -32,7 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'dreamline-backend-prod.herokuapp.com']
 CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://dreamline-frontend-prod.herokuapp.com']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000',
+                        'https://dreamline-frontend-prod.herokuapp.com']
 
 # Application definition
 
@@ -152,8 +154,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join('BASE_DIR','uploads','images')
-MEDIA_URL = 'uploads/images'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads', 'images')
+MEDIA_URL = 'uploads/images/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

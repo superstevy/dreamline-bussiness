@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('posts/', include('apps.posts.urls')),
     path('user/', include('apps.user.urls')),
-    path('backgroundimage/', include('apps.backgroundimage.urls')), 
+    path('backgroundimage/', include('apps.backgroundimage.urls')),
     path('userbackground/', include('apps.userbackground.urls')),
 ]
