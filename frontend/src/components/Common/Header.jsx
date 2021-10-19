@@ -13,6 +13,9 @@ function Header() {
           <div class="next">
             <a href="/">Next</a>
           </div>
+          <div class="signin">
+            <a href="/">Sign in</a>
+          </div>
           <div class="signup">
             <a href="/">Sign up</a>
           </div>

@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "../components/Common/Header";
 import Steps from "../components/Common/Steps";
 
 import Roberto from "../assets/img/roberto-nickson-tleCJiDOri0-unsplash.png";
@@ -15,8 +14,6 @@ import MG30 from "../assets/img/Mask Group 30.png";
 function Generate() {
   return (
     <div id="generate">
-      <Header />
-
       <main>
         <Steps />
 

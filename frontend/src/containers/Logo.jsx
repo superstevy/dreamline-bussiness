@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "../components/Common/Header";
 import Steps from "../components/Common/Steps";
 
 import Plus_img from "../assets/img/+.png";
@@ -8,8 +7,6 @@ import Plus_img from "../assets/img/+.png";
 function Logo() {
   return (
     <div id="logo">
-      <Header />
-
       <main>
         <Steps />
 
