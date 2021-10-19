@@ -1,4 +1,4 @@
-import React from ' react';
+import React from 'react';
 
 function YourBackground () {
     return (
@@ -11,14 +11,14 @@ function YourBackground () {
 
                 <div class="scrolling-wrapper">
                     <div class="card">
-                        <img src="./assets/Mask Group 33.png" alt=""></img>
+                        <img src="../assets/img/Mask Group 33.png" alt=""></img>
                         <div class="link-panel">
                             <a id="preview-btn">Preview | </a><button class="DL-btn">Download</button>
                         </div>
                     </div>
 
                     <div class="card">
-                        <img src="./assets/Mask Group 34.png" alt=""></img>
+                        <img src="../assets/img/Mask Group 34.png" alt=""></img>
                         <div class="link-panel">
                             <a href="#">Preview | </a><button class="DL-btn">Download</button>
                         </div>
@@ -26,7 +26,7 @@ function YourBackground () {
 
                     <div class="card">
                         <div class="add-btn">
-                            <img src="./assets/+.svg"></img>
+                            <img src="../src/assets/img/+.svg"></img>
                         </div> 
                     </div>
                 </div>
