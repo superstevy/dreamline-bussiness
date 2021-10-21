@@ -1,4 +1,5 @@
 import axios from "axios";
+const LOGIN_USER_KEY = "LOGIN_USER_KEY";
 
 var baseURL;
 if (
@@ -16,6 +17,21 @@ const api = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+api.interceptors.request.use(
+  (config) => {
+    if (localStorage.getItem(LOGIN_USER_KEY)) {
+      config.headers.common["Authorization"] = JSON.parse(
+        localStorage.getItem(LOGIN_USER_KEY)
+      ).token;
+    }
+
+    return config;
+  },
+  (err) => {
+    console.error(err);
+  }
+);
 
 export default class API {
   getUsers = async () => {
