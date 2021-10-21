@@ -19,7 +19,7 @@ const Router = () => {
         <Route exact path="/info" component={Info} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/signin" component={SignIn} />
-        <Route exact path="/Userbackground" component={YourBackground} />  
+        <Route exact path="/userbackground" component={YourBackground} />
       </Switch>
     </>
   );
