@@ -3,10 +3,13 @@ import React from 'react';
 import group33 from "../assets/img/Mask Group 33.png";
 import group44 from "../assets/img/Mask Group 34.png";
 import addbtn from "../assets/img/+.svg";
+import Header from "../components/Common/Header";
 
 function YourBackground () {
     return (
-        <div class="yb-bg">
+    <>
+        <Header />
+        <div id="Yourbackground" class="yb-bg">
             <div class="yb-body">
                 <main class="yb-main">
 
@@ -38,6 +41,7 @@ function YourBackground () {
                 </main>
             </div>
         </div>
+        </>
     );
 }
 
