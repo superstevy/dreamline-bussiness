@@ -1,12 +1,9 @@
 import React from "react";
-import Header from "../components/Common/Header";
 import Steps from "../components/Common/Steps";
 
 function Info() {
   return (
     <div id="info">
-      <Header />
-
       <main>
         <Steps />
 
