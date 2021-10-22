@@ -10,23 +10,23 @@ function Logo() {
       <main>
         <Steps />
 
-        <div class="choose instruct">
+        <div className="choose instruct">
           <p>Upload your Logo</p>
         </div>
-        <div class="addLogo">
+        <div className="addLogo">
           <img src={Plus_img} alt="" />
         </div>
       </main>
 
       <footer>
-        <div class="btn">
-          <div class="btn-1">
+        <div className="btn">
+          <div className="btn-1">
             <a href="/info" class="next">
               Next
             </a>
           </div>
           <hr />
-          <div class="btn-2">
+          <div className="btn-2">
             <a href="/generate" class="back">
               Back
             </a>

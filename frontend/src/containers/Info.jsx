@@ -7,30 +7,30 @@ function Info() {
       <main>
         <Steps />
 
-        <div class="choose instruct instruct-info">
+        <div className="choose instruct instruct-info">
           <p>Add your Info</p>
         </div>
-        <form class="infos">
-          <div class="name">
+        <form className="infos">
+          <div className="name">
             <p>Name</p>
             <input type="text" />
           </div>
-          <div class="role">
+          <div className="role">
             <p>Role in company</p>
             <input type="text" />
           </div>
-          <div class="comp-name">
+          <div className="comp-name">
             <p>Company Name</p>
             <input type="text" />
           </div>
-          <div class="btn-add">
-            <input class="next" value="Add" type="submit" />
+          <div className="btn-add">
+            <input className="next" value="Add" type="submit" />
           </div>
         </form>
       </main>
 
       <footer>
-        <div class="btn-back">
+        <div className="btn-back">
           <a href="/logo" class="back">
             Back
           </a>

@@ -14,13 +14,13 @@ function Header() {
             <a href="/">Next</a>
           </div>
           <div class="signin">
-            <a href="/">Sign in</a>
+            <a href="/signin">Sign in</a>
           </div>
           <div class="signup">
-            <a href="/">Sign up</a>
+            <a href="/signup">Sign up</a>
           </div>
           <div class="mycard">
-            <a href="/">Create card</a>
+            <a href="/generate">Create card</a>
           </div>
         </div>
       </nav>
