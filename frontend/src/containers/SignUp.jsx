@@ -2,7 +2,7 @@ import React from "react";
 
 function SignUp () {
     return (
-        <body class="yb-body">
+        <body>
             <section>
                 <div class="sign-up">
                     <div class="sign-up-2">

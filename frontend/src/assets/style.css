@@ -14,6 +14,16 @@ a {
   color: #9dd9d7;
 }
 
+.yb-bg{
+  background-image:url('../assets/img/yb-background.PNG');
+  background-repeat:no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  width:100%;
+  height: 100%;
+  
+}
+
 .header {
   background-color: #264f58;
   color: #9dd9d7;
@@ -808,10 +818,6 @@ main yourbackground
   background-color:rgba(255, 255, 255, 0.8);
   height: 500px;  
   width: 80%;
-  background-image:url('../assets/img/yb-background.PNG');
-  background-repeat:no-repeat;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 .yb-main .YB-header p{
@@ -992,7 +998,8 @@ justify-content: center;
   color: white;
   border-radius: 10px;
   background-color:#264f58 ;
-  margin: 5px 0;
+  margin: 8px auto ;
+  display: block;
   
 }
 
