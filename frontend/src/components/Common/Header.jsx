@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { signOut } from "../../reducks/userAuth/operations";
 
 function Header() {
   const dispatch = useDispatch();
+  const key = localStorage.getItem("LOGIN_USER_KEY");
+  const [signedIn, setSignedIn] = useState(false);
 
   const signOutButton = (e) => {
-    e.preventDefault();
     dispatch(signOut());
+    setSignedIn(false);
   };
+
+  useEffect(() => {
+    if (key != null) {
+      setSignedIn(true);
+    }
+  }, [key]);
 
   return (
     <header class="header">
@@ -23,17 +31,18 @@ function Header() {
           <div class="next">
             <a href="/">Next</a>
           </div>
-          <div class="signin">
-            <a href="/signin">Sign in</a>
-          </div>
-          <div class="signup">
-            <a href="/signup">Sign up</a>
-          </div>
-          <div className="signout">
-            <a href="" onClick={signOutButton}>
-              Sign out
-            </a>
-          </div>
+          {signedIn ? (
+            <div className="signout">
+              <a href="" onClick={signOutButton}>
+                Sign out
+              </a>
+            </div>
+          ) : (
+            <div class="signin">
+              <a href="/signin">Sign in</a>
+            </div>
+          )}
+          <div class="signup">{!signedIn && <a href="/signup">Sign up</a>}</div>
           <div class="mycard">
             <a href="/generate">Create card</a>
           </div>
