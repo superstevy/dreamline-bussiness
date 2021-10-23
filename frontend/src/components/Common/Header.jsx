@@ -1,6 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+
+import { signOut } from "../../reducks/userAuth/operations";
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const signOutButton = (e) => {
+    e.preventDefault();
+    dispatch(signOut());
+  };
+
   return (
     <header class="header">
       <nav class="flex-header">
@@ -18,6 +28,11 @@ function Header() {
           </div>
           <div class="signup">
             <a href="/signup">Sign up</a>
+          </div>
+          <div className="signout">
+            <a href="" onClick={signOutButton}>
+              Sign out
+            </a>
           </div>
           <div class="mycard">
             <a href="/generate">Create card</a>
