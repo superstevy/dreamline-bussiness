@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 import group33 from "../assets/img/Mask Group 33.png";
 import group44 from "../assets/img/Mask Group 34.png";
 import addbtn from "../assets/img/+.svg";
@@ -43,6 +42,5 @@ function YourBackground () {
         </div>
         </>
     );
-}
 
 export default YourBackground;

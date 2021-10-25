@@ -10,44 +10,20 @@ import Img3 from "../assets/img/Mask Group 36.png";
 function Home() {
   return (
     <div id="home">
-      <header class="header">
-        <nav class="flex-header">
-          <div class="mb-0">
-            <p>
-              <span> DREAMLINE</span> digital
-            </p>
-          </div>
-          <div class="mb-1">
-            <div class="next">
-              <a href="/generate">Next</a>
-            </div>
-            <div class="signin">
-              <a href="/">Sign in</a>
-            </div>
-            <div class="signup">
-              <a href="/">Sign up</a>
-            </div>
-            <div class="mycard">
-              <a href="/">My card</a>
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      <main class="main">
-        <div class="flex-main">
-          <div class="main-1">
-            <div class="title">
+      <main className="main">
+        <div className="flex-main">
+          <div className="main-1">
+            <div className="title">
               <p>The Best Digital Business Background</p>
             </div>
-            <div class="description">
+            <div className="description">
               <p>
                 Dreamline Digital is a free digital business meeting Background
                 and designed to help you grow your network.
               </p>
             </div>
-            <div class="generate">
-              <a href="/generate" class="make-image">
+            <div className="generate">
+              <a href="/generate" className="make-image">
                 Generate your background image
               </a>
             </div>
@@ -55,63 +31,63 @@ function Home() {
         </div>
       </main>
 
-      <footer class="footer">
-        <div class="footer-1">
-          <div class="title">
+      <footer className="footer">
+        <div className="footer-1">
+          <div className="title">
             <p>Create your own business background</p>
           </div>
         </div>
-        <div class="footer-2">
-          <div class="logo-1">
-            <div class="image-header">
-              <div class="logo">
+        <div className="footer-2">
+          <div className="logo-1">
+            <div className="image-header">
+              <div className="logo">
                 <img src={Oracle} alt="" />
               </div>
-              <div class="business">
+              <div className="business">
                 <hr />
-                <p class="name">Shalina gomes</p>
-                <p class="occupation">Chief Firestarter</p>
-                <p class="brand">Oracle</p>
+                <p className="name">Shalina gomes</p>
+                <p className="occupation">Chief Firestarter</p>
+                <p className="brand">Oracle</p>
               </div>
             </div>
-            <div class="image">
+            <div className="image">
               <img src={Img1} alt="" />
             </div>
           </div>
-          <div class="logo-2">
-            <div class="image-header">
-              <div class="logo">
+          <div className="logo-2">
+            <div className="image-header">
+              <div className="logo">
                 <img src={Tesla} alt="" />
               </div>
-              <div class="business">
+              <div className="business">
                 <hr />
-                <p class="name">Shalina gomes</p>
-                <p class="occupation">Chief Firestarter</p>
-                <p class="brand">Tesla</p>
+                <p className="name">Shalina gomes</p>
+                <p className="occupation">Chief Firestarter</p>
+                <p className="brand">Tesla</p>
               </div>
             </div>
-            <div class="image">
+            <div className="image">
               <img src={Img2} alt="" />
             </div>
           </div>
-          <div class="logo-3">
-            <div class="image-header">
-              <div class="logo">
+          <div className="logo-3">
+            <div className="image-header">
+              <div className="logo">
                 <img src={Ibm} alt="" />
               </div>
-              <div class="business">
+              <div className="business">
                 <hr />
-                <p class="name">Shalina gomes</p>
-                <p class="occupation">Chief Firestarter</p>
-                <p class="brand">IBM</p>
+                <p className="name">Shalina gomes</p>
+                <p className="occupation">Chief Firestarter</p>
+                <p className="brand">IBM</p>
               </div>
             </div>
-            <div class="image">
+            <div className="image">
               <img src={Img3} alt="" />
             </div>
           </div>
-          <div class="try-now">
-            <a href="/generate" class="make-image">
+          <div className="try-now">
+            <a href="/generate" className="make-image">
               {" "}
               TRY NOW{" "}
             </a>
@@ -119,7 +95,7 @@ function Home() {
         </div>
 
         <hr />
-        <div class="footer-3">
+        <div className="footer-3">
           <p>
             <strong>DREAMLINE</strong> digital
           </p>
