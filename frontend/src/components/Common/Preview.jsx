@@ -1,13 +1,14 @@
 import React from "react";
+import preview from "../assets/img/Group 62.png"
 
 function Preview () {
     return (
-        <body class="yb-body">
+        <body>
             {/* <!-- preview-modal --> */}
             <section>
                 <div class="preview">
                     <div class="preview-close-btn">+</div>
-                    <img src="../assets/img/Group 62.png"></img>
+                    <img src={preview}></img>
 
                     <button class="preview-DL" type="submit">Download</button>
                 </div>
