@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Steps from "../components/Common/Steps";
 
 import Plus_img from "../assets/img/+.png";
 
-function Logo() {
+function Logo({
+  setStep,
+  previewCompanyLogoUrl,
+  setInputCompanyLogo,
+  setPreviewCompanyLogoUrl,
+}) {
+  const inputFile = useRef(null);
+  const onButtonClick = () => {
+    inputFile.current.click();
+  };
+
+  const inputImage = (event) => {
+    const file = event.target.files[0];
+    const objectUrl = URL.createObjectUrl(file);
+    setPreviewCompanyLogoUrl(objectUrl);
+    setInputCompanyLogo(file);
+    console.log(file);
+  };
+
   return (
     <div id="logo">
       <main>
@@ -14,22 +32,34 @@ function Logo() {
           <p>Upload your Logo</p>
         </div>
         <div className="addLogo">
-          <img src={Plus_img} alt="" />
+          <input
+            type="file"
+            style={{ display: "none" }}
+            ref={inputFile}
+            onChange={inputImage}
+          />
+          <img
+            src={previewCompanyLogoUrl ? previewCompanyLogoUrl : Plus_img}
+            alt=""
+            onClick={onButtonClick}
+            name="image"
+            type="file"
+          />
         </div>
       </main>
 
       <footer>
         <div className="btn">
           <div className="btn-1">
-            <a href="/info" class="next">
+            <button onClick={() => setStep(3)} class="next">
               Next
-            </a>
+            </button>
           </div>
           <hr />
           <div className="btn-2">
-            <a href="/generate" class="back">
+            <button onClick={() => setStep(1)} class="back">
               Back
-            </a>
+            </button>
           </div>
         </div>
       </footer>
