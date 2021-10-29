@@ -20,9 +20,10 @@ export default function createStore(history) {
       bimg: BimgReducer,
     }),
     compose(
-      applyMiddleware(routerMiddleware(history), thunk)
+      applyMiddleware(routerMiddleware(history), thunk),
       // DEBUG MODE
-      // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );
 }

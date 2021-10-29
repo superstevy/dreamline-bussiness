@@ -34,7 +34,7 @@ function YourBackground() {
 
               <div class="card">
                 <div class="add-btn">
-                  <img src={addbtn}></img>
+                  <img src={addbtn} alt=""></img>
                 </div>
               </div>
             </div>

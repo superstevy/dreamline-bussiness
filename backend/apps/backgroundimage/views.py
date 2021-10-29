@@ -7,11 +7,12 @@ from rest_framework import generics
 from rest_framework.response import Response
 from .models import BackgroundImg
 from .serializers import BackgroundImgSerializer
+from apps.user.mixins import CustomLoginRequiredMixin
 
 # Create your views here.
 
 
-class BackgroundImgList(generics.ListAPIView):
+class BackgroundImgList(generics.ListAPIView, CustomLoginRequiredMixin):
     queryset = BackgroundImg.objects.all()
     serializer_class = BackgroundImgSerializer
 

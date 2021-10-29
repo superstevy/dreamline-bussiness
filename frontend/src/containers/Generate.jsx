@@ -64,6 +64,8 @@ function Generate() {
             submitToGenerate={submitToGenerate}
           />
         );
+      default:
+        return;
     }
   };
 

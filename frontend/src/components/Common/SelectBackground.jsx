@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Steps from "./Steps";
 
-import { fetchBimg } from "../../reducks/backgroundimages/operations";
-import { getBimg } from "../../reducks/backgroundimages/selectors";
+import { fetchBimg } from "../../reducks/backgroundImg/operations";
+import { getBimg } from "../../reducks/backgroundImg/selectors";
 
 function SelectBackground({
   setStep,
@@ -17,6 +17,8 @@ function SelectBackground({
 
   useEffect(() => {
     dispatch(fetchBimg());
+    console.log("image");
+    console.log(bImg);
   }, []);
 
   return (
@@ -33,9 +35,11 @@ function SelectBackground({
               <div class="bgd" key={image.id}>
                 <img
                   src={image.image}
-                  alt=""
                   onClick={() => setInputBackgroundId(image.id)}
                 />
+                <h1>
+                  {image.name} {image.id}
+                </h1>
               </div>
             ))}
         </div>
