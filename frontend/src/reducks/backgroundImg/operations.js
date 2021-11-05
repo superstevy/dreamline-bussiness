@@ -12,6 +12,7 @@ export const fetchBimg = () => {
       })
       .catch((error) => {
         alert("Failed to connect API: /backgroundimages/");
+        console.log(error);
       });
   };
 };

@@ -13,12 +13,11 @@ function SelectBackground({
 }) {
   const selector = useSelector((state) => state);
   const dispatch = useDispatch();
-  const bImg = getBimg(selector);
+  const bimg = getBimg(selector);
 
   useEffect(() => {
     dispatch(fetchBimg());
-    console.log("image");
-    console.log(bImg);
+    console.log(bimg);
   }, []);
 
   return (
@@ -30,12 +29,13 @@ function SelectBackground({
           <p>Choose your background Image</p>
         </div>
         <div class="flex-2">
-          {bImg["results"] &&
-            bImg["results"].map((image) => (
-              <div class="bgd" key={image.id}>
+          {bimg["results"] &&
+            bimg["results"].map((image) => (
+              <div className="bgd" key={image.id}>
                 <img
                   src={image.image}
                   onClick={() => setInputBackgroundId(image.id)}
+                  alt={image.name}
                 />
                 <h1>
                   {image.name} {image.id}

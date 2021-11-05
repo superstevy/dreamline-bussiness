@@ -17,7 +17,7 @@ function Logo({
 
   const inputImage = (event) => {
     const file = event.target.files[0];
-    const objectUrl = URL.createObjectUrl(file);
+    const objectUrl = URL.createObjectURL(file);
     setPreviewCompanyLogoUrl(objectUrl);
     setInputCompanyLogo(file);
     console.log(file);
