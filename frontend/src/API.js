@@ -97,7 +97,7 @@ export default class API {
     }
 
     return api
-      .post("/userBackground/add/", formData)
+      .post("/userbackground/add/", formData)
       .then((response) => {
         return response.data;
       })
