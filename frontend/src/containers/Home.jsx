@@ -1,5 +1,7 @@
 import React from "react";
 
+import Header from "../components/Common/Header";
+
 import Oracle from "../assets/img/Oracle-logo.png";
 import Img1 from "../assets/img/Mask Group 37.png";
 import Tesla from "../assets/img/Tesla_logo.png";
@@ -10,6 +12,8 @@ import Img3 from "../assets/img/Mask Group 36.png";
 function Home() {
   return (
     <div id="home">
+      <Header />
+
       <main className="main">
         <div className="flex-main">
           <div className="main-1">

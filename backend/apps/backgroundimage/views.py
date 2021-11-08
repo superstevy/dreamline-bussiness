@@ -7,6 +7,7 @@ from rest_framework import generics
 from rest_framework.response import Response
 from .models import BackgroundImg
 from .serializers import BackgroundImgSerializer
+from apps.user.mixins import CustomLoginRequiredMixin
 
 # Create your views here.
 

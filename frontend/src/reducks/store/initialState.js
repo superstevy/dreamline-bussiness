@@ -8,6 +8,9 @@ const initialState = {
     token: "",
     token_expires_at: "",
   },
+  bimg: {
+    list: [],
+  },
 };
 
 export default initialState;

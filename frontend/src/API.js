@@ -77,6 +77,35 @@ export default class API {
     return newUser;
   };
 
+  getBackgroundImg = async () => {
+    const bimg = await api
+      .get("/backgroundimage/")
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    return bimg;
+  };
+
+  postUserBackground = async (params = {}) => {
+    const formData = new FormData();
+
+    for (const key in params) {
+      formData.append(key, params[key]);
+    }
+
+    return api
+      .post("/userBackground/add/", formData)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  };
+
   // getPosts = async () => {
   //     const posts = await api
   //         .get("/posts/")
