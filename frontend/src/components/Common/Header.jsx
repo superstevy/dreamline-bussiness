@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
+import { push } from "connected-react-router";
 
 import { signOut } from "../../reducks/userAuth/operations";
 
 function Header() {
   const dispatch = useDispatch();
   const key = localStorage.getItem("LOGIN_USER_KEY");
-  const [signedIn, setSignedIn] = useState(false);
 
   const signOutButton = (e) => {
     dispatch(signOut());
-    setSignedIn(false);
+    dispatch(push("/signin"));
   };
-
-  useEffect(() => {
-    if (key != null) {
-      setSignedIn(true);
-    }
-  }, [key]);
 
   return (
     <header class="header">
@@ -29,23 +23,30 @@ function Header() {
         </div>
         <div class="mb-1">
           <div class="next">
-            <a href="/">Next</a>
+            <a href="/generate">Next</a>
           </div>
-          {signedIn ? (
-            <div className="signout">
-              <a href="" onClick={signOutButton}>
-                Sign out
-              </a>
-            </div>
+          {key ? (
+            <a href class="signup" onClick={signOutButton}>
+              Logout
+            </a>
           ) : (
-            <div class="signin">
-              <a href="/signin">Sign in</a>
-            </div>
+            <a href class="signin" onClick={() => dispatch(push("/signin"))}>
+              Sign in
+            </a>
           )}
-          <div class="signup">{!signedIn && <a href="/signup">Sign up</a>}</div>
-          <div class="mycard">
-            <a href="/generate">Create card</a>
-          </div>
+          {key ? (
+            <a
+              href
+              class="mycard"
+              onClick={() => dispatch(push("/userbackground"))}
+            >
+              My cards
+            </a>
+          ) : (
+            <a href class="signup" onClick={() => dispatch(push("/signup"))}>
+              Sign up
+            </a>
+          )}
         </div>
       </nav>
     </header>

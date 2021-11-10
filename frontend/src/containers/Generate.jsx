@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { push } from "connected-react-router";
 
 import Header from "../components/Common/Header";
 import SelectBackground from "../components/Common/SelectBackground";
@@ -10,6 +12,8 @@ import API from "../API";
 const api = new API();
 
 function Generate() {
+  const dispatch = useDispatch();
+
   const [step, setStep] = useState(1);
 
   const [inputBackgroundId, setInputBackgroundId] = useState(null);
@@ -28,7 +32,14 @@ function Generate() {
       role: inputRole,
       background_id: inputBackgroundId,
     };
-    api.postUserBackground(params);
+    api
+      .postUserBackground(params)
+      .then((response) => {
+        dispatch(push("/userbackground"));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     e.preventDefault();
   };
 

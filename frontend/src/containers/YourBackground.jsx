@@ -1,10 +1,31 @@
-import React from "react";
-import group33 from "../assets/img/Mask Group 33.png";
-import group44 from "../assets/img/Mask Group 34.png";
-import addbtn from "../assets/img/+.svg";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUimages } from "../reducks/userbackground/selectors";
+import { fetchUimages } from "../reducks/userbackground/operations";
+import Preview from "../components/Common/Preview";
 import Header from "../components/Common/Header";
 
 function YourBackground() {
+  const selector = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const uimages = getUimages(selector);
+  const user = JSON.parse(localStorage.getItem("LOGIN_USER_KEY"));
+  const [showPreview, setShowPreview] = useState(false);
+  const [selectedImageId, setSelectedImageId] = useState(null);
+
+  useEffect(() => {
+    dispatch(fetchUimages(user.token));
+    console.log("uimage:");
+    console.log(uimages);
+    console.log("user:");
+    console.log(user);
+  }, []);
+
+  const clickImage = (imageId) => {
+    setSelectedImageId(imageId);
+    setShowPreview(true);
+  };
+
   return (
     <>
       <Header />
@@ -16,31 +37,31 @@ function YourBackground() {
             </div>
 
             <div class="scrolling-wrapper">
-              <div class="card">
-                <img src={group33} alt=""></img>
-                <div class="link-panel">
-                  <a id="preview-btn">Preview | </a>
-                  <button class="DL-btn">Download</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <img src={group44} alt=""></img>
-                <div class="link-panel">
-                  <a href="#">Preview | </a>
-                  <button class="DL-btn">Download</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="add-btn">
-                  <img src={addbtn} alt=""></img>
-                </div>
-              </div>
+              {uimages["results"] &&
+                uimages["results"].map((image) => (
+                  <div class="card">
+                    <img src={image.generated_background} alt=""></img>
+                    <div class="link-panel">
+                      <span
+                        id="preview-btn"
+                        onClick={() => clickImage(image.id)}
+                      >
+                        Preview |{" "}
+                      </span>
+                      <button class="DL-btn">Download</button>
+                    </div>
+                  </div>
+                ))}
             </div>
           </main>
         </div>
       </div>
+      {showPreview && (
+        <Preview
+          setShowPreview={setShowPreview}
+          selectedImageId={selectedImageId}
+        />
+      )}
     </>
   );
 }

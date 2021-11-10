@@ -37,9 +37,6 @@ function SelectBackground({
                   onClick={() => setInputBackgroundId(image.id)}
                   alt={image.name}
                 />
-                <h1>
-                  {image.name} {image.id}
-                </h1>
               </div>
             ))}
         </div>

@@ -106,6 +106,29 @@ export default class API {
       });
   };
 
+  getUserbackgrounds = async () => {
+    return api
+      .get("/userbackground/")
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  };
+
+  getUserbackground = async (id) => {
+    const response = await api
+      .get("/userbackground/images/" + id + "/")
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    return response;
+  };
+
   // getPosts = async () => {
   //     const posts = await api
   //         .get("/posts/")
