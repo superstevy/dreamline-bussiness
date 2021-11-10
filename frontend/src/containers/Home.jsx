@@ -34,18 +34,13 @@ function Home() {
             <div className="generate">
               {key ? (
                 <a
-                  href
                   onClick={() => dispatch(push("/generate"))}
                   class="make-image"
                 >
                   Generate your background image
                 </a>
               ) : (
-                <a
-                  href
-                  onClick={() => dispatch(push("/signin"))}
-                  class="make-image"
-                >
+                <a onClick={() => dispatch(push("/signin"))} class="make-image">
                   Generate your background image
                 </a>
               )}

@@ -27,7 +27,7 @@ function Header() {
           </div>
           {key ? (
             <a href class="signup" onClick={signOutButton}>
-              Logout
+              Logout {"         "}
             </a>
           ) : (
             <a href class="signin" onClick={() => dispatch(push("/signin"))}>

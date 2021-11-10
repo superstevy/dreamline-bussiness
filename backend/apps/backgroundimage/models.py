@@ -11,3 +11,6 @@ class BackgroundImg(models.Model):
     image = models.ImageField(
         'image'
     )
+
+    def __str__(self):
+        return self.name

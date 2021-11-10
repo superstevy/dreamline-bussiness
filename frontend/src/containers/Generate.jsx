@@ -35,6 +35,7 @@ function Generate() {
     api
       .postUserBackground(params)
       .then((response) => {
+        console.log(response);
         dispatch(push("/userbackground"));
       })
       .catch((error) => {

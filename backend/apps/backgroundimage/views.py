@@ -12,12 +12,12 @@ from apps.user.mixins import CustomLoginRequiredMixin
 # Create your views here.
 
 
-class BackgroundImgList(generics.ListAPIView):
+class BackgroundImgList(CustomLoginRequiredMixin, generics.ListAPIView):
     queryset = BackgroundImg.objects.all()
     serializer_class = BackgroundImgSerializer
 
 
-class BackgroundImgAdd(generics.CreateAPIView):
+class BackgroundImgAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
     queryset = BackgroundImg.objects.all()
 
     def post(self, request, *args, **kwargs):

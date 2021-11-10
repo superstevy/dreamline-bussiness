@@ -99,6 +99,7 @@ export default class API {
     return api
       .post("/userbackground/add/", formData)
       .then((response) => {
+        console.log(response.data);
         return response.data;
       })
       .catch((error) => {
