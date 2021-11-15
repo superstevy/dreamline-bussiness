@@ -1,5 +1,5 @@
 import React from "react";
-import Steps from "../components/Common/Steps";
+import Steps from "./Steps";
 
 function Info({
   setStep,

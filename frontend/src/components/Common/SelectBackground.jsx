@@ -21,7 +21,7 @@ function SelectBackground({
   }, []);
 
   return (
-    <div>
+    <div id="selectBg">
       <main>
         <Steps />
 

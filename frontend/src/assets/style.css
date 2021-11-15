@@ -14,13 +14,12 @@ a {
   color: #9dd9d7;
 }
 
-.yb-bg{
-  background-image:url('../assets/img/yb-background.PNG');
-  background-repeat:no-repeat;
-  margin:0;
+.yb-bg {
+  background-image: url("../assets/img/yb-background.PNG");
+  background-repeat: no-repeat;
+  margin: 0;
   height: 41em;
-  position:relative;
-  
+  position: relative;
 }
 
 .header {
@@ -264,7 +263,7 @@ p.brand {
 /
 */
 
-#generate {
+#selectBg {
   background-image: url("img/gen - backgrd.png");
   background-repeat: no-repeat;
   background-position: 35% 43%;
@@ -825,8 +824,8 @@ main yourbackground
   background-color: rgba(255, 255, 255, 0.8);
   height: 500px;
   width: 80%;
-  top:5em;
-  position:relative;
+  top: 5em;
+  position: relative;
   background-image: url("../assets/img/yb-background.PNG");
   background-repeat: no-repeat;
   background-position: center;
@@ -851,13 +850,12 @@ main yourbackground
     flex-direction: column;
   }
 
-  .yb-body{
-    height:100%
+  .yb-body {
+    height: 100%;
   }
   .yb-main {
     height: 100%;
   }
-
 
   .yb-bg {
     height: 100%;
@@ -1010,8 +1008,8 @@ main yourbackground
   border: 1px solid #9dd9d7;
   color: white;
   border-radius: 10px;
-  background-color:#264f58 ;
-  margin: 8px auto ;
+  background-color: #264f58;
+  margin: 8px auto;
   display: block;
 }
 
@@ -1143,4 +1141,3 @@ preview modal
     margin: 0;
   }
 }
-

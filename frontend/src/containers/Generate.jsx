@@ -4,8 +4,8 @@ import { push } from "connected-react-router";
 
 import Header from "../components/Common/Header";
 import SelectBackground from "../components/Common/SelectBackground";
-import Logo from "./Logo";
-import Info from "./Info";
+import Logo from "../components/Common/Logo";
+import Info from "../components/Common/Info";
 
 import API from "../API";
 
