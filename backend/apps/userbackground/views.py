@@ -11,6 +11,8 @@ from rest_framework.response import Response
 from django.core.files.storage import FileSystemStorage
 from rest_framework import generics
 from apps.user.mixins import CustomLoginRequiredMixin
+
+
 X_DEFAULT_VALUE = 12
 Y_DEFAULT_VALUE = 12
 LINE_DEFAULT_WIDTH = 200
@@ -22,6 +24,7 @@ def resize_image(logo, background_height):
     # Set basehight 15% of image background
     baseheight = int(background_height * 0.15)
     width, height = logo.size
+
     # Resize width base on image height
     width_resize = int((baseheight * float(width)/height))
     return width_resize, baseheight
@@ -45,31 +48,40 @@ def get_filename(extension):
 def generate_background_color(background_image):
     draw = ImageDraw.Draw(background_image, 'RGBA')
     width, height = background_image.size
+
     # Get 60% Height of Image Background Height
     gradian_height = int(height*0.6)
+
     # Set RGB Color
     r, g, b = 38, 79, 88
+
     # Loop through gradian_height to draw line with Gradian Transparent Color
     for i in range(gradian_height):
         # Maximum Transparent Alpha
         alpha = MAX_TRANSPARENT_ALPHA
+
         # Make sure start line is with Maximum Transparent Alpha
         if i > 0:
+
             # decrement as percentage of Transparent Alpha
             alpha = (gradian_height-i)/gradian_height * MAX_TRANSPARENT_ALPHA
+
         # Draw line from Top to Bottom to make Transparent Image Background
         draw.line((0, i, width, i), fill=(int(r), int(g), int(b), int(alpha)))
+
     return draw
 
 
-class UserBackgroundAdd(generics.CreateAPIView):
+class UserBackgroundAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
     queryset = UserBackground.objects.order_by('-id').all()
     serializer_class = UserBackgroundSerializer
 
     def post(self, request, *args, **kwargs):
+
         # Validate data
         serializer = UserBackgroundSerializer()
         serializer.validate(request.data)
+
         # Get Image Background
         background = BackgroundImg.objects.get(
             id=request.data['background_id'])
