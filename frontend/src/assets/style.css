@@ -981,9 +981,9 @@ main yourbackground
 .card .link-panel .DL-btn {
   color: #9dd9d7;
   background-color: #264f58;
-  border: 0px solid #264f58;
-  border-radius: 5px;
-  font-size: 25px;
+  border: 5px solid #264f58;
+  border-radius: 10px;
+  /* font-size: 25px; */
   margin: auto;
   height: 30px;
 }

@@ -48,7 +48,14 @@ function YourBackground() {
                       >
                         Preview |{" "}
                       </span>
-                      <button class="DL-btn">Download</button>
+                      <a
+                        href={image.generated_background}
+                        download={image.name}
+                        target="_blank"
+                        class="DL-btn"
+                      >
+                        Download
+                      </a>
                     </div>
                   </div>
                 ))}
