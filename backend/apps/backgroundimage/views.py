@@ -3,21 +3,18 @@ from secrets import token_hex
 from config.settings import MEDIA_URL
 from PIL import Image
 from django.core.files.storage import FileSystemStorage
+from apps.backgroundimage.serializers import BackgroundImgSerializer
+from apps.backgroundimage.models import BackgroundImg
 from rest_framework import generics
 from rest_framework.response import Response
-from .models import BackgroundImg
-from .serializers import BackgroundImgSerializer
-from apps.user.mixins import CustomLoginRequiredMixin
-
-# Create your views here.
 
 
-class BackgroundImgList(CustomLoginRequiredMixin, generics.ListAPIView):
+class BackgroundImgList(generics.ListAPIView):
     queryset = BackgroundImg.objects.all()
     serializer_class = BackgroundImgSerializer
 
 
-class BackgroundImgAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
+class BackgroundImgAdd(generics.CreateAPIView):
     queryset = BackgroundImg.objects.all()
 
     def post(self, request, *args, **kwargs):

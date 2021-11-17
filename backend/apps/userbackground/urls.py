@@ -1,9 +1,11 @@
 from django.urls import path
-from .views import *
+from . import views
 
 urlpatterns = [
-    path('', UserBackgroundList.as_view(), name='user_list'),
-    path('add/', UserBackgroundAdd.as_view(), name='add'),
-    path('images/<int:pk>/', UserBackgroundImage.as_view(),
+    path('add/', views.UserBackgroundAdd.as_view(),
          name='create_user_background'),
+    path('', views.UserBackgroundList.as_view(), name='create_user_background'),
+    path('images/<int:pk>/', views.UserBackgroundImage.as_view(),
+         name='create_user_background'),
+
 ]

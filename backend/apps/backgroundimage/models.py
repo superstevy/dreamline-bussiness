@@ -6,7 +6,7 @@ class BackgroundImg(models.Model):
         db_table = 'backgroundImg'
 
     name = models.CharField(
-        'name', blank=False, null=False,  max_length=50, db_index=True,
+        'Name', blank=False, null=False, max_length=14, db_index=True, default='Anonymous'
     )
     image = models.ImageField(
         'image'

@@ -1,7 +1,7 @@
 from config.settings import BASE_DIR, MEDIA_URL
 import os
-from .serializers import UserBackgroundSerializer
-from .models import UserBackground
+from apps.userbackground.serializers import UserBackgroundSerializer
+from apps.userbackground.models import UserBackground
 from apps.backgroundimage.models import BackgroundImg
 from PIL import Image
 from PIL import ImageFont
@@ -85,33 +85,45 @@ class UserBackgroundAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
         # Get Image Background
         background = BackgroundImg.objects.get(
             id=request.data['background_id'])
+
         # Define the path to our custom .ttf font
         raleway_bold, raleway_medium = load_font()
+
         # Get uploaded file logo
         company_logo = request.data['company_logo']
+
         # Save and get open url
         fss = FileSystemStorage()
         logo_filename = fss.save(company_logo.name, company_logo)
+
         # Replace first '/' because open function doesn't support /uploads/images
         logo_file = fss.url(logo_filename).replace('/', '', 1)
+
         # Open image logo
         logo = Image.open(logo_file).convert('RGBA')
+
         # Open Image Background
         generated_background_image = Image.open(
             MEDIA_URL+str(background.image))
+
         # Get Resize Width & Height
         width_resize, baseheight = resize_image(
             logo, generated_background_image.size[1])
+
         # Resize Width & Height of Logo
         logo = logo.resize((width_resize, baseheight))
+
         # Get background color
         draw = generate_background_color(generated_background_image)
+
         # Paste Logo on specific position of background image
         generated_background_image.paste(
             logo, (X_DEFAULT_VALUE, Y_DEFAULT_VALUE), logo)
+
         # Draw white a horizontal straight line
         draw.line([(X_DEFAULT_VALUE, baseheight + 20),
                   (LINE_DEFAULT_WIDTH, baseheight + 20)], fill=COLOR_WHITE, width=2)
+
         # write Name, Role, Company Name
         draw.text((X_DEFAULT_VALUE, baseheight + 30),
                   request.data['username'], COLOR_WHITE, font=raleway_bold)
@@ -119,9 +131,12 @@ class UserBackgroundAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
                   request.data['role'], COLOR_WHITE, font=raleway_medium)
         draw.text((X_DEFAULT_VALUE, baseheight + 90),
                   request.data['company_name'], COLOR_WHITE, font=raleway_medium)
+
         # Generate Filename
         filename = get_filename(generated_background_image.format)
+
         new_user_background = UserBackground.objects.create(
+            user=request.login_user,
             username=request.data['username'],
             company_name=request.data['company_name'],
             role=request.data['role'],
@@ -129,16 +144,19 @@ class UserBackgroundAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
             background_id=background,
             generated_background=filename,
         )
+
         # Save Image
         generated_background_image.save(MEDIA_URL+filename, quality=100)
+
         # Convert Model to Serializer
         serializer = UserBackgroundSerializer(new_user_background)
+
         # Response data as Dict
         return Response(serializer.data)
 
 
 class UserBackgroundList(CustomLoginRequiredMixin, generics.ListAPIView):
-    queryset = UserBackground.objects.order_by('-id').all()
+    queryset = UserBackground.objects.all()
     serializer_class = UserBackgroundSerializer
 
     def get(self, request, *args, **kwargs):
