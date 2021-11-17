@@ -39,7 +39,7 @@ function YourBackground() {
             <div class="scrolling-wrapper">
               {uimages["results"] &&
                 uimages["results"].map((image) => (
-                  <div class="card">
+                  <div class="card" key={image.id}>
                     <img src={image.generated_background} alt=""></img>
                     <div class="link-panel">
                       <span

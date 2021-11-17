@@ -49,13 +49,16 @@ a {
   display: none;
 }
 
-/* .signout input {
+.signin,
+.signup,
+.mycard {
+  margin: 5px;
   border: none;
   color: #9dd9d7;
   background-color: #264f58;
   font-size: 20px;
   font-family: "Raleway", sans-serif;
-} */
+}
 
 .back {
   color: #264f58;
@@ -326,6 +329,11 @@ main
   margin: 15px;
 }
 
+.bgd img {
+  width: 25em;
+  height: 15em;
+}
+
 .bgd img:hover {
   outline: 15px solid #8dc7c5;
 }
@@ -524,7 +532,7 @@ footer
 /*****************************************
 ******************************************/
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   #home .flex-header .mb-1 .signup,
   #generate .flex-header .mb-1 .next,
   #logo .flex-header .mb-1 .next,
@@ -809,43 +817,9 @@ footer
   .btn-back {
     margin: 20px 39% 50px;
   }
-}
-/*/ //////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-main yourbackground 
-////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////*/
-.yb-body {
-  border: 2px solid white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 7px #888888;
-  margin: auto;
-  padding: 0px 25px 0px 25px;
-  background-color: rgba(255, 255, 255, 0.8);
-  height: 500px;
-  width: 80%;
-  top: 5em;
-  position: relative;
-  background-image: url("../assets/img/yb-background.PNG");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
 
-.yb-main .YB-header p {
-  color: #264f58;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 600;
-}
+  /*************************************************************************************/
 
-.scrolling-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-@media only screen and (max-width: 700px) {
   .scrolling-wrapper {
     flex-direction: column;
   }
@@ -866,24 +840,7 @@ main yourbackground
     font-size: 28px;
     font-weight: 600;
   }
-}
 
-.scrolling-wrapper .card {
-  width: 100%;
-  margin: 0 10px;
-}
-
-.card img {
-  width: 60%;
-}
-
-@media only screen and (min-width: 375px) {
-  .scrolling-wrapper .card img {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 700px) {
   .scrolling-wrapper .card img {
     width: 100%;
   }
@@ -892,6 +849,107 @@ main yourbackground
     width: 100%;
     margin: 30px 0;
   }
+
+  .card .link-panel {
+    display: flex;
+    align-content: flex-start;
+  }
+
+  .card .add-btn {
+    width: 250px;
+    margin: 0;
+  }
+
+  .sign-up-2 {
+    width: 90%;
+  }
+
+  .preview {
+    position: absolute;
+  }
+  .preview img {
+    width: 100%;
+    height: 40%;
+    object-fit: scale-down;
+  }
+  #create-card {
+    display: none;
+  }
+
+  .yb-body {
+    object-fit: scale-down;
+  }
+  .flex-header .mb-1 div {
+    display: flex;
+  }
+
+  .flex-header .mb-0 p {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+  #sign-up-btn {
+    font-size: 15px;
+  }
+
+  .card img {
+    object-fit: contain;
+    height: 200px;
+  }
+  .scrolling-wrapper .card {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .scrolling-wrapper .card img {
+    width: 100%;
+  }
+}
+
+/*/ //////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+main yourbackground 
+////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.yb-body {
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 7px #888888;
+  margin: auto;
+  padding: 0px 25px 0px 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 30em;
+  width: 80%;
+  top: 5em;
+  position: relative;
+  /* background-image: url("../assets/img/yb-background.PNG"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.yb-main .YB-header p {
+  color: #264f58;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.scrolling-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.scrolling-wrapper .card {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
 }
 
 .card .add-btn {
@@ -928,18 +986,6 @@ main yourbackground
   font-size: 25px;
   margin: auto;
   height: 30px;
-}
-
-@media only screen and (max-width: 700px) {
-  .card .link-panel {
-    display: flex;
-    align-content: flex-start;
-  }
-
-  .card .add-btn {
-    width: 250px;
-    margin: 0;
-  }
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -1048,11 +1094,6 @@ main yourbackground
   opacity: 0.7;
   font-weight: 500;
 }
-@media only screen and (max-width: 700px) {
-  .sign-up-2 {
-    width: 90%;
-  }
-}
 
 /* ////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -1096,48 +1137,20 @@ preview modal
 }
 
 .preview-close-btn {
-  color: black;
+  /*color: black; */
   position: absolute;
-  top: 0;
-  font-size: 60px;
+  top: 30px;
+  /* font-size: 70px; */
   transform: rotate(45deg);
   cursor: pointer;
-  right: 600px;
-  bottom: 30px;
+  right: 345px;
+  /* bottom: 30px; */
+  /* width: 0%; */
+  height: fit-content;
 }
-@media only screen and (max-width: 700px) {
-  .preview {
-    position: absolute;
-  }
-  .preview img {
-    width: 100%;
-    height: 40%;
-    object-fit: scale-down;
-  }
-  #create-card {
-    display: none;
-  }
 
-  .yb-body {
-    object-fit: scale-down;
-  }
-  .flex-header .mb-1 div {
-    display: flex;
-  }
-
-  .flex-header .mb-0 p {
-    font-size: 20px;
-    margin: 5px 0;
-  }
-  #sign-up-btn {
-    font-size: 15px;
-  }
-
-  .card img {
-    object-fit: contain;
-    height: 200px;
-  }
-  .scrolling-wrapper .card {
-    margin: 0;
-  }
+.preview-close-btn input {
+  font-size: 50px;
+  border: none;
+  background: none;
 }

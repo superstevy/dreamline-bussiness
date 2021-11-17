@@ -26,26 +26,34 @@ function Header() {
             <a href="/generate">Next</a>
           </div>
           {key ? (
-            <a href class="signup" onClick={signOutButton}>
-              Logout {"         "}
-            </a>
+            <input
+              type="submit"
+              class="signup"
+              onClick={signOutButton}
+              value="Logout"
+            />
           ) : (
-            <a href class="signin" onClick={() => dispatch(push("/signin"))}>
-              Sign in
-            </a>
+            <input
+              type="submit"
+              class="signin"
+              onClick={() => dispatch(push("/signin"))}
+              value="Sign in"
+            />
           )}
           {key ? (
-            <a
-              href
+            <input
+              type="submit"
               class="mycard"
               onClick={() => dispatch(push("/userbackground"))}
-            >
-              My cards
-            </a>
+              value="My cards"
+            />
           ) : (
-            <a href class="signup" onClick={() => dispatch(push("/signup"))}>
-              Sign up
-            </a>
+            <input
+              type="submit"
+              class="signup"
+              onClick={() => dispatch(push("/signup"))}
+              value="Sign up"
+            />
           )}
         </div>
       </nav>

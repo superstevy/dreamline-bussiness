@@ -3,7 +3,7 @@ import API from "../../API";
 
 const api = new API();
 
-function Preview({ selectedImageId }) {
+function Preview({ selectedImageId, setShowPreview }) {
   const [image, setImage] = useState({});
 
   useEffect(() => {
@@ -17,12 +17,18 @@ function Preview({ selectedImageId }) {
       });
   }, []);
 
+  const clickCloseButton = () => {
+    setShowPreview(false);
+  };
+
   return (
     <body>
       {/* <!-- preview-modal --> */}
       <section>
         <div class="preview">
-          <div class="preview-close-btn">+</div>
+          <div class="preview-close-btn">
+            <input type="submit" value="+" onClick={() => clickCloseButton()} />
+          </div>
           <img src={image.generated_background} alt=""></img>
 
           <button class="preview-DL" type="submit">
