@@ -31,9 +31,14 @@ function Preview({ selectedImageId, setShowPreview }) {
           </div>
           <img src={image.generated_background} alt=""></img>
 
-          <button class="preview-DL" type="submit">
+          <a
+            href={image.generated_background}
+            download={image.name}
+            target="_blank"
+            class="preview-DL"
+          >
             Download
-          </button>
+          </a>
         </div>
       </section>
     </body>
