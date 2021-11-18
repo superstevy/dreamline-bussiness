@@ -97,13 +97,37 @@ export default class API {
     }
 
     return api
-      .post("/userBackground/add/", formData)
+      .post("/userbackground/add/", formData)
+      .then((response) => {
+        console.log(response.data);
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  };
+
+  getUserbackgrounds = async () => {
+    return api
+      .get("/userbackground/")
       .then((response) => {
         return response.data;
       })
       .catch((error) => {
         throw new Error(error);
       });
+  };
+
+  getUserbackground = async (id) => {
+    const response = await api
+      .get("/userbackground/images/" + id + "/")
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    return response;
   };
 
   // getPosts = async () => {

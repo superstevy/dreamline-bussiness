@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 
-import Steps from "../components/Common/Steps";
+import Steps from "./Steps";
 
-import Plus_img from "../assets/img/+.png";
+import Plus_img from "../../assets/img/+.png";
 
 function Logo({
   setStep,

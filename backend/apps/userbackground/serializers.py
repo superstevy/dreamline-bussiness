@@ -1,6 +1,7 @@
 from .models import UserBackground
 from rest_framework import serializers
 
+
 class UserBackgroundSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserBackground
@@ -11,10 +12,10 @@ class UserBackgroundSerializer(serializers.ModelSerializer):
 
         if 'username' not in data:
             errors['username'] = ['username is required.']
-        
+
         if 'company_logo' not in data:
             errors['company_logo'] = ['company_logo is required.']
-        
+
         if 'company_name' not in data:
             errors['company_name'] = ['company_name is required.']
 
@@ -26,5 +27,5 @@ class UserBackgroundSerializer(serializers.ModelSerializer):
 
         if bool(errors):
             raise serializers.ValidationError(errors)
-        
+
         return data

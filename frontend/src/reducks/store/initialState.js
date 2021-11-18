@@ -11,6 +11,9 @@ const initialState = {
   bimg: {
     list: [],
   },
+  uimages: {
+    list: [],
+  },
 };
 
 export default initialState;

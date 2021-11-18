@@ -1,20 +1,48 @@
-import React from "react";
-import preview from "../assets/img/Group 62.png"
+import React, { useState, useEffect } from "react";
+import API from "../../API";
 
-function Preview () {
-    return (
-        <body>
-            {/* <!-- preview-modal --> */}
-            <section>
-                <div class="preview">
-                    <div class="preview-close-btn">+</div>
-                    <img src={preview}></img>
+const api = new API();
 
-                    <button class="preview-DL" type="submit">Download</button>
-                </div>
-            </section>          
-        </body>
-    );
+function Preview({ selectedImageId, setShowPreview }) {
+  const [image, setImage] = useState({});
+
+  useEffect(() => {
+    api
+      .getUserbackground(selectedImageId)
+      .then((response) => {
+        setImage(response);
+      })
+      .catch((error) => {
+        alert("Failed to connect API: ImageDetail");
+      });
+  }, []);
+
+  const clickCloseButton = () => {
+    setShowPreview(false);
+  };
+
+  return (
+    <body>
+      {/* <!-- preview-modal --> */}
+      <section>
+        <div class="preview">
+          <div class="preview-close-btn">
+            <input type="submit" value="+" onClick={() => clickCloseButton()} />
+          </div>
+          <img src={image.generated_background} alt=""></img>
+
+          <a
+            href={image.generated_background}
+            download={image.name}
+            target="_blank"
+            class="preview-DL"
+          >
+            Download
+          </a>
+        </div>
+      </section>
+    </body>
+  );
 }
 
 export default Preview;
