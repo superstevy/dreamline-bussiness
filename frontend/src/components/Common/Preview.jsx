@@ -35,6 +35,7 @@ function Preview({ selectedImageId, setShowPreview }) {
             href={image.generated_background}
             download={image.name}
             target="_blank"
+            rel="noreferrer"
             class="preview-DL"
           >
             Download

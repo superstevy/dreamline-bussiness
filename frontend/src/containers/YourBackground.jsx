@@ -52,6 +52,7 @@ function YourBackground() {
                         href={image.generated_background}
                         download={image.name}
                         target="_blank"
+                        rel="noreferrer"
                         class="DL-btn"
                       >
                         Download
