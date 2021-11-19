@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { push } from "connected-react-router";
 
 import { signIn } from "../reducks/userAuth/operations";
+import Header from "../components/Common/Header";
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -30,7 +31,9 @@ function SignIn() {
   };
 
   return (
-    <div className="yb-body">
+    <div id="signin">
+      <Header />
+
       <section>
         <div className="sign-in">
           <div className="sign-up-2">

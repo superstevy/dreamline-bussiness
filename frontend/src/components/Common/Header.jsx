@@ -18,13 +18,12 @@ function Header() {
       <nav class="flex-header">
         <div class="mb-0">
           <p>
-            <span> DREAMLINE</span> digital
+            <a href="/">
+              <span> DREAMLINE</span> digital
+            </a>
           </p>
         </div>
         <div class="mb-1">
-          {/* <div class="next">
-            <a href="/generate">Next</a>
-          </div> */}
           {key ? (
             <input
               type="submit"
