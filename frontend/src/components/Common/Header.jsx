@@ -22,9 +22,9 @@ function Header() {
           </p>
         </div>
         <div class="mb-1">
-          <div class="next">
+          {/* <div class="next">
             <a href="/generate">Next</a>
-          </div>
+          </div> */}
           {key ? (
             <input
               type="submit"
