@@ -1,4 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { push } from "connected-react-router";
+
+import Header from "../components/Common/Header";
 
 import Oracle from "../assets/img/Oracle-logo.png";
 import Img1 from "../assets/img/Mask Group 37.png";
@@ -8,8 +12,13 @@ import Ibm from "../assets/img/2560px-IBM_logo.svg.png";
 import Img3 from "../assets/img/Mask Group 36.png";
 
 function Home() {
+  const key = localStorage.getItem("LOGIN_USER_KEY");
+  const dispatch = useDispatch();
+
   return (
     <div id="home">
+      <Header />
+
       <main className="main">
         <div className="flex-main">
           <div className="main-1">
@@ -23,9 +32,18 @@ function Home() {
               </p>
             </div>
             <div className="generate">
-              <a href="/generate" className="make-image">
-                Generate your background image
-              </a>
+              {key ? (
+                <a
+                  onClick={() => dispatch(push("/generate"))}
+                  class="make-image"
+                >
+                  Generate your background image
+                </a>
+              ) : (
+                <a onClick={() => dispatch(push("/signin"))} class="make-image">
+                  Generate your background image
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -86,11 +104,24 @@ function Home() {
               <img src={Img3} alt="" />
             </div>
           </div>
-          <div className="try-now">
-            <a href="/generate" className="make-image">
-              {" "}
-              TRY NOW{" "}
-            </a>
+          <div class="try-now">
+            {key ? (
+              <span
+                onClick={() => dispatch(push("/generate"))}
+                class="make-image"
+              >
+                {" "}
+                TRY NOW{" "}
+              </span>
+            ) : (
+              <span
+                onClick={() => dispatch(push("/signin"))}
+                class="make-image"
+              >
+                {" "}
+                TRY NOW{" "}
+              </span>
+            )}
           </div>
         </div>
 

@@ -12,11 +12,11 @@ function Steps() {
         <div class="step">
           <p>Step 1</p>
         </div>
-        <a href="/generate">
-          <div class="step-1">
-            <img src={Step1} class="icon" alt="" />
-          </div>
-        </a>
+
+        <div class="step-1">
+          <img src={Step1} class="icon" alt="" />
+        </div>
+
         <div class="step">
           <p>Choose Background</p>
         </div>
@@ -28,11 +28,11 @@ function Steps() {
         <div class="step">
           <p>Step 2</p>
         </div>
-        <a href="/logo">
-          <div class="step-2">
-            <img src={Step2} class="icon" alt="" />
-          </div>
-        </a>
+
+        <div class="step-2">
+          <img src={Step2} class="icon" alt="" />
+        </div>
+
         <div class="step">
           <p>Upload Logo</p>
         </div>
@@ -44,11 +44,11 @@ function Steps() {
         <div class="step">
           <p>Step 3</p>
         </div>
-        <a href="/info">
-          <div class="step-3">
-            <img src={Step3} class="icon" alt="" />
-          </div>
-        </a>
+
+        <div class="step-3">
+          <img src={Step3} class="icon" alt="" />
+        </div>
+
         <div class="step">
           <p>Add Info</p>
         </div>

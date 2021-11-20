@@ -1,51 +1,59 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
+import { push } from "connected-react-router";
 
 import { signOut } from "../../reducks/userAuth/operations";
 
 function Header() {
   const dispatch = useDispatch();
   const key = localStorage.getItem("LOGIN_USER_KEY");
-  const [signedIn, setSignedIn] = useState(false);
 
   const signOutButton = (e) => {
     dispatch(signOut());
-    setSignedIn(false);
+    dispatch(push("/signin"));
   };
-
-  useEffect(() => {
-    if (key != null) {
-      setSignedIn(true);
-    }
-  }, [key]);
 
   return (
     <header class="header">
       <nav class="flex-header">
         <div class="mb-0">
           <p>
-            <span> DREAMLINE</span> digital
+            <a href="/">
+              <span> DREAMLINE</span> digital
+            </a>
           </p>
         </div>
         <div class="mb-1">
-          <div class="next">
-            <a href="/">Next</a>
-          </div>
-          {signedIn ? (
-            <div className="signout">
-              <a href="" onClick={signOutButton}>
-                Sign out
-              </a>
-            </div>
+          {key ? (
+            <input
+              type="submit"
+              class="signup"
+              onClick={signOutButton}
+              value="Logout"
+            />
           ) : (
-            <div class="signin">
-              <a href="/signin">Sign in</a>
-            </div>
+            <input
+              type="submit"
+              class="signin"
+              onClick={() => dispatch(push("/signin"))}
+              value="Sign in"
+            />
           )}
-          <div class="signup">{!signedIn && <a href="/signup">Sign up</a>}</div>
-          <div class="mycard">
-            <a href="/generate">Create card</a>
-          </div>
+          {key ? (
+            <input
+              type="submit"
+              class="mycard"
+              onClick={() => dispatch(push("/userbackground"))}
+              value="My cards"
+            />
+          ) : (
+            <input
+              type="submit"
+              class="signup"
+              onClick={() => dispatch(push("/signup"))}
+              value="Sign up"
+            />
+          )}
         </div>
       </nav>
     </header>

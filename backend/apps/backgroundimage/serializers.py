@@ -3,9 +3,9 @@ from rest_framework import serializers
 
 
 class BackgroundImgSerializer(serializers.ModelSerializer):
-    name = serializers.SerializerMethodField()
-    image = serializers.ImageField()
+    image = serializers.ImageField(required=True)
+    name = serializers.CharField(required=True)
 
     class Meta:
-        Model = BackgroundImg
-        fields = ('__all__')
+        model = BackgroundImg
+        fields = '__all__'
