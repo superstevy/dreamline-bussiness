@@ -22,7 +22,7 @@ function Preview({ selectedImageId, setShowPreview }) {
   };
 
   return (
-    <body>
+    <div>
       {/* <!-- preview-modal --> */}
       <section>
         <div class="preview">
@@ -42,7 +42,7 @@ function Preview({ selectedImageId, setShowPreview }) {
           </a>
         </div>
       </section>
-    </body>
+    </div>
   );
 }
 
