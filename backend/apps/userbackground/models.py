@@ -2,6 +2,7 @@ from django.db.models.deletion import CASCADE
 from apps.backgroundimage.models import BackgroundImg
 from django.db import models
 from apps.user.models import UserAccount
+from cloudinary.models import CloudinaryField
 
 
 class UserBackground(models.Model):
@@ -16,7 +17,7 @@ class UserBackground(models.Model):
     company_name = models.CharField(
         'Company Name', blank=False, null=False, max_length=100
     )
-    company_logo = models.ImageField(
+    company_logo = CloudinaryField(
         'Company Logo', blank=False, null=False, max_length=140
     )
     role = models.CharField(
@@ -25,7 +26,7 @@ class UserBackground(models.Model):
     background_id = models.ForeignKey(
         BackgroundImg, related_name='background_image', on_delete=CASCADE, db_index=True, null=True
     )
-    generated_background = models.ImageField(
+    generated_background = CloudinaryField(
         'Generated Background', blank=True, null=True, max_length=255
     )
     created_at = models.DateTimeField(
