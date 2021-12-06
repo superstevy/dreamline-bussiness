@@ -1119,7 +1119,7 @@ preview modal
   }
 
   .yb-body {
-    height: 35em;
+    /* height: 35em; */
     width: 90%;
     top: 1em;
     padding: 0 25px;
