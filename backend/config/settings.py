@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-ov#r^^&xv&^0vmc(zj&h_t^$*52@8jicn=%*z*@s-=li!s_p@=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'dreamline-backend-prod.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'dreamline-backend.herokuapp.com']
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000',
-                        'https://dreamline-frontend-prod.herokuapp.com']
+                        'https://dreamline-frontend.herokuapp.com']
 
 # Application definition
 
@@ -91,11 +91,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2brjdbonldn8s',
-        'USER': 'vgaprqpqgajjld',
+        'NAME': 'd5ldcgcdjd8q16',
+        'USER': 'ybrzwnwqdtoczm',
         'PORT': 5432,
-        'HOST': 'ec2-3-217-68-126.compute-1.amazonaws.com',
-        'PASSWORD': 'b150c35bf6c5b42f7ec106ec81524b27c30fa604b884182c3da14bb4627edb42',
+        'HOST': 'ec2-3-95-146-114.compute-1.amazonaws.com',
+        'PASSWORD': 'e7673fc9c17835979f367f1cb4bcdc7a2e9d5116ff9e36aa7239366c993edbd9',
     }
 }
 
