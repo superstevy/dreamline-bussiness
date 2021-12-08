@@ -1,7 +1,7 @@
 # Dreamline Bussiness in React & Redux + Django
 
 ```
-Forum App, with a frontend built in React & Redux and a backend built in Django API.
+Dreamline Bussiness, with a frontend built in React & Redux and a backend built in Django API.
 ```
 
 ## Live Demo
@@ -25,6 +25,7 @@ Check out [API LIVE DEMO](https://dreamline-backend-prod.herokuapp.com/) here!!
 
 ```
 git clone git@github.com:https://github.com/dreamline1/dreamline-bussiness
+
 ```
 
 2. Backend setting
