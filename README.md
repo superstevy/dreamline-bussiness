@@ -24,7 +24,8 @@ Check out [API LIVE DEMO](https://dreamline-backend-prod.herokuapp.com/) here!!
 1. Git Clone
 
 ```
-git clone https://github.com/superstevy/dreamline-bussiness.git
+git clone git@github.com:https://github.com/dreamline1/dreamline-bussiness
+
 ```
 
 2. Backend setting
